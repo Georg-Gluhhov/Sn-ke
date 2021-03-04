@@ -12,6 +12,8 @@ namespace Snäke
         public int y;
         public char sym;
 
+        public ConsoleColor ForegroundColor { get; internal set; }
+
         public Point()
         {
         }
@@ -47,6 +49,8 @@ namespace Snäke
             {
                 y = y + offset;
             }
+            
+
         }
         public void Draw()
         {
@@ -57,6 +61,10 @@ namespace Snäke
         {
             sym = ' ';
             Draw();
+        }
+        public bool IsHit(Point p)
+        {
+            return p.x == this.x && p.y == this.y;
         }
         public override string ToString()
         {

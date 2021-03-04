@@ -43,18 +43,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class1.cs" />
     <Compile Include="Direction.cs" />
     <Compile Include="Figure.cs" />
     <Compile Include="FoodCreator.cs" />
     <Compile Include="HorizontalLine.cs" />
     <Compile Include="Point.cs" />
+    <Compile Include="PowerUp.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Snäke.cs" />
     <Compile Include="VerticalLine.cs" />
+    <Compile Include="Walls.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Powerup3.wav" />
+    <EmbeddedResource Include="Hit_Hurt4.wav" />
+    <EmbeddedResource Include="LeaderBoard.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="dcd.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Powerup4.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Powerup27.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

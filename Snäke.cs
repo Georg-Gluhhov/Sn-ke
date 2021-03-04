@@ -38,6 +38,16 @@ namespace Snäke
             nextPoint.Move(1, direction);
             return nextPoint;
         }
+        public bool IsHitTail()
+        {
+            var head = pList.Last();
+            for (int i = 0; i < pList.Count - 2; i++)
+            {
+                if (head.IsHit(pList[i]))
+                    return true;
+            }
+            return false;
+        }
         public void HandleKey(ConsoleKey key)
         {
             if (key == ConsoleKey.LeftArrow)
@@ -56,6 +66,42 @@ namespace Snäke
                 direction = Direction.DOWN;
             else if (key == ConsoleKey.W)
                 direction = Direction.UP;
+        }
+        internal bool Eat(Point food)
+        {
+            Point head = GetNextPoint();
+            if (head.IsHit(food)) 
+            {
+                food.sym = head.sym;
+                pList.Add(food);
+                return true;
+            }
+            else
+                return false;
+        }
+        internal bool Toch(Point trap)
+        {
+            Point head = GetNextPoint();
+            if (head.IsHit(trap))
+            {
+                trap.sym = head.sym;
+                pList.Add(trap);
+                return true;
+            }
+            else
+                return false;
+        }
+        internal bool Found(Point PowerUp)
+        {
+            Point head = GetNextPoint();
+            if (head.IsHit(PowerUp))
+            {
+                PowerUp.sym = head.sym;
+                pList.Add(PowerUp);
+                return true;
+            }
+            else
+                return false;
         }
     }
 }
